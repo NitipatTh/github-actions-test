@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: NitipaTh/github-actions-test@v1
+      uses: NitipatTh/github-actions-test@v1
       with:
         who-to-greet: 'NitipatTh'
     # Use the output from the `hello` step
