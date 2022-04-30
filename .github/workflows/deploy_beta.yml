@@ -1,9 +1,10 @@
-name: Connect javascript file
+name: Deploy Beta
 
 on:
-  workflow_run:
-    workflows: ["Bump prerelease version"]
-    types: [completed]
+  pull_request:
+    types: [closed]
+    branches:
+      - beta
 
 jobs:
   hello_world_job:

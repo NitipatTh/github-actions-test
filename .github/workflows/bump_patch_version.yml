@@ -1,4 +1,4 @@
-name: Bump prerelease version
+name: Bump patch version
 
 on:
   pull_request:
@@ -28,7 +28,7 @@ jobs:
         run: npm install
 
       - name: npm bump prerelease no tag
-        run: npm --no-git-tag-version version prerelease
+        run: npm --no-git-tag-version version patch
 
       - name: Commit files
         run: |

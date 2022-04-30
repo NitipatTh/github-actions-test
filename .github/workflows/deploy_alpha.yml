@@ -1,0 +1,20 @@
+name: Deploy Alpha
+
+on:
+  workflow_run:
+    workflows: ["Bump patch version"]
+    types: [completed]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+    - name: Hello world action step
+      id: hello
+      uses: NitipatTh/github-actions-test@v1
+      with:
+        who-to-greet: 'NitipatTh'
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
