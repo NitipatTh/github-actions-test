@@ -28,7 +28,7 @@ jobs:
         run: npm install
 
       - name: npm bump prerelease no tag
-        run: npm --no-git-tag-version version patch
+        run: npm --no-git-tag-version version minor
 
       - name: Commit files
         run: |
@@ -37,6 +37,7 @@ jobs:
           git add ./package-lock.json
           git add ./package.json
           git commit -m "[Bot] bump version"
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
