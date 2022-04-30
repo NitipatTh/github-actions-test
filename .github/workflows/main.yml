@@ -1,6 +1,9 @@
 name: Connect javascript file
 
-on: [push]
+on:
+  workflow_run:
+    workflows: ["Bump prerelease version"]
+    types: [completed]
 
 jobs:
   hello_world_job:
