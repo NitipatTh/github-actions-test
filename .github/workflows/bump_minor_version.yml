@@ -1,10 +1,9 @@
 name: Bump minor version
 
 on:
-  pull_request:
-    types: [closed]
-    branches:
-      - beta
+  workflow_run:
+    workflows: ["Deploy Beta"]
+    types: [completed]
 jobs:
   build:
     runs-on: ubuntu-latest
