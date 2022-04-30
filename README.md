@@ -1,3 +1,3 @@
 # github-actions-test
 
-Bump package version
+Bump package version.
