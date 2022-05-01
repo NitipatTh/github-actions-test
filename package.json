@@ -1,24 +1,24 @@
 {
-    "name": "github-actions-test",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/NitipatTh/github-actions-test.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/NitipatTh/github-actions-test/issues"
-    },
-    "homepage": "https://github.com/NitipatTh/github-actions-test#readme",
-    "dependencies": {
-      "@actions/core": "^1.2.5",
-      "@actions/github": "^4.0.0"
-    }
+  "name": "github-actions-test",
+  "version": "1.1.7",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NitipatTh/github-actions-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NitipatTh/github-actions-test/issues"
+  },
+  "homepage": "https://github.com/NitipatTh/github-actions-test#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.5",
+    "@actions/github": "^4.0.0"
   }
+}
