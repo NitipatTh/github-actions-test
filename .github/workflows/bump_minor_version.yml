@@ -4,13 +4,14 @@ on:
   workflow_run:
     workflows: ["Deploy to beta"]
     types: [completed]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [12.x]
-    if: github.event.pull_request.merged == true
+        
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
