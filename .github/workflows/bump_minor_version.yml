@@ -2,7 +2,7 @@ name: Bump minor version
 
 on:
   workflow_run:
-    workflows: ["Deploy Beta"]
+    workflows: ["Deploy to beta"]
     types: [completed]
 jobs:
   build:
