@@ -78,5 +78,5 @@ jobs:
         if: steps.branch-name.outputs.current_branch == 'develop'
         uses: ad-m/github-push-action@master
         with:
-          branch: ${{ github.ref }} #ignore if your branch is master
+          branch: develop #ignore if your branch is master
           github_token: ${{ secrets.CICD_GITHUB_TOKEN }}
