@@ -17,7 +17,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-          fetch-depth: 0
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@master
@@ -38,6 +37,7 @@ jobs:
           git add ./package-lock.json
           git add ./package.json
           git commit -m "[Bot] bump version"
+          git remote prune origin
 
       - name: Push changes
         uses: ad-m/github-push-action@master
