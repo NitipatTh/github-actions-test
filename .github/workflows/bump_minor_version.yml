@@ -6,7 +6,8 @@ on:
     types: [completed]
 
 jobs:
-  build:
+  run_if:
+    if:  startsWith(github.head_ref, 'develop')
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -18,7 +19,6 @@ jobs:
         uses: tj-actions/branch-names@v5.2
 
       - name: Echo branch name
-        if: steps.branch-name.outputs.current_branch == 'develop'
         run: |
           echo "Running on branch: ${{ steps.branch-name.outputs.current_branch }}"
 
