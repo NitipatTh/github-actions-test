@@ -60,8 +60,4 @@ jobs:
 
       - name: Echo branch name v2
         run: |
-          echo "Running v2 on branch: ${{ steps.extract_branch.outputs.branch }}"
-
-      - name: Echo branch name v3
-        run: |
           echo "Running v2 on branch: ${{ github.ref }}"
