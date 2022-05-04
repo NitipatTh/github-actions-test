@@ -13,6 +13,15 @@ jobs:
         node-version: [12.x]
 
     steps:
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v5.2
+
+      - name: Echo branch name
+        if: steps.branch-name.outputs.current_branch == 'develop'
+        run: |
+          echo "Running on branch: ${{ steps.branch-name.outputs.current_branch }}"
+
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
