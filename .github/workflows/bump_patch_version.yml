@@ -37,6 +37,7 @@ jobs:
           git add ./package-lock.json
           git add ./package.json
           git commit -m "[Bot] bump version"
+          git remote prune origin
 
       - name: Push changes
         uses: ad-m/github-push-action@master
