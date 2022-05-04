@@ -2,7 +2,7 @@ name: Auto merge beta to develop
 
 on:
   workflow_run:
-    workflows: ["Bump minor version"]
+    workflows: ["Deploy to beta"]
     types: [completed]
 
 jobs:
