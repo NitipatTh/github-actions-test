@@ -52,12 +52,3 @@ jobs:
       - name: Echo branch name v1
         run: |
           echo "Running v1 on branch: ${{ steps.branch-name.outputs.current_branch }}"
-
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
-
-      - name: Echo branch name v2
-        run: |
-          echo "Running v2 on branch: ${{ github.ref }}"
