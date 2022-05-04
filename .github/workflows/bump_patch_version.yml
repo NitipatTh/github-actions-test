@@ -51,4 +51,3 @@ jobs:
         with:
           branch: ${{ github.ref }} #ignore if your branch is master
           github_token: ${{ secrets.CICD_GITHUB_TOKEN }}
-          force: true
