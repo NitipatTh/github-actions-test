@@ -6,8 +6,7 @@ on:
     types: [completed]
 
 jobs:
-  run_if:
-    if:  startsWith(github.head_ref, 'develop')
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,6 +20,7 @@ jobs:
       - name: Echo branch name
         run: |
           echo "Running on branch: ${{ steps.branch-name.outputs.current_branch }}"
+          echo "Running on branch: ${{ github.head_ref }}"
 
       - name: Checkout Code
         uses: actions/checkout@v2
