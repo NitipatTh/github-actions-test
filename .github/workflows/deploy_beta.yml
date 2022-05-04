@@ -11,6 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
+    - name: Get branch name
+      id: branch-name
+      uses: tj-actions/branch-names@v5.2
+      
+    - name: Echo branch name
+      run: |
+        echo "Running on branch: ${{ steps.branch-name.outputs.current_branch }}"
+
     - name: Hello world action step
       id: hello
       uses: NitipatTh/github-actions-test@v1
