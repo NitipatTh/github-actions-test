@@ -13,6 +13,14 @@ jobs:
         node-version: [12.x]
     if: github.event.pull_request.merged == true
     steps:
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v5.2
+
+      - name: Echo branch name
+        run: |
+          echo "Running on branch: ${{ steps.branch-name.outputs.current_branch }}"
+          
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
@@ -44,11 +52,3 @@ jobs:
           branch: ${{ github.ref }} #ignore if your branch is master
           github_token: ${{ secrets.CICD_GITHUB_TOKEN }}
           force: true
-
-      - name: Get branch name
-        id: branch-name
-        uses: tj-actions/branch-names@v5.2
-
-      - name: Echo branch name
-        run: |
-          echo "Running on branch: ${{ steps.branch-name.outputs.current_branch }}"
