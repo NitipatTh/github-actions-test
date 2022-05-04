@@ -20,27 +20,31 @@ jobs:
       - name: Echo branch name
         run: |
           echo "Running on branch: ${{ steps.branch-name.outputs.current_branch }}"
-          echo "Running on branch: ${{ github.head_ref }}"
 
       - name: Checkout Code
+        if: steps.branch-name.outputs.current_branch == 'develop'
         uses: actions/checkout@v2
         with:
           persist-credentials: false
           ref: refs/heads/develop
 
       - name: Use Node.js ${{ matrix.node-version }}
+        if: steps.branch-name.outputs.current_branch == 'develop'
         uses: actions/setup-node@master
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com/
 
       - name: npm install
+        if: steps.branch-name.outputs.current_branch == 'develop'
         run: npm install
 
       - name: npm bump prerelease no tag
+        if: steps.branch-name.outputs.current_branch == 'develop'
         run: npm --no-git-tag-version version minor
 
       - name: Commit files
+        if: steps.branch-name.outputs.current_branch == 'develop'
         run: |
           git config --local user.email "bot@nitipat.test"
           git config --local user.name "GitHub Action Bot"
@@ -49,6 +53,7 @@ jobs:
           git commit -m "[Bot] bump version"
 
       - name: Push changes
+        if: steps.branch-name.outputs.current_branch == 'develop'
         uses: ad-m/github-push-action@master
         with:
           branch: ${{ github.ref }} #ignore if your branch is master
