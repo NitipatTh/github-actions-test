@@ -7,7 +7,7 @@ on:
       - develop
 jobs:
   call-workflow:
-      uses: NitipatTh/github-action-shared-pipeline/.github/workflows/bump_patch_version.yaml@main
+      uses: NitipatTh/github-action-shared-pipeline/.github/workflows/bump_patch_version.yml@main
       with:
         ref: $GITHUB_REF
       secrets: inherit
